@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Detector</title>
+</head>
+<body>
+    <link rel="stylesheet" href="popup.css">
+
+
+    <div class="popup-container">
+        <!-- Header with Logo and Title -->
+        <div class="popup-header">
+          <img src="logo.png" alt="Cloaklogo" class="logo" />
+          <h2>Cloak</h2>
+        </div>
+      
+        <!-- Main Body with Toggles and Buttons -->
+        <div class="popup-body">
+          <!-- Privacy Mode Toggle -->
+          <div class="privacy-mode">
+            <label for="privacyToggle">Privacy Mode:</label>
+            <input type="checkbox" id="privacyToggle" />
+          </div>
+      
+          <!-- Quick Action Buttons -->
+          <div class="actions">
+            <button id="detectSensitiveData">Scan for Sensitive Data</button>
+            <button id="manageFilters">Manage Filters</button>
+          </div>
+      
+          <!-- Detected Data Summary -->
+          <div class="summary">
+            <p>Detected Items: <span id="dataSummary">0</span></p>
+          </div>
+        </div>
+      
+        <!-- Footer with Settings Link -->
+        <div class="popup-footer">
+          <a href="settings.html">Advanced Settings</a>
+        </div>
+    </div>
+      
+    <script src="popup.js"></script>    
+</body>
+</html>

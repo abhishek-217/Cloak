@@ -1,0 +1,133 @@
+/* Main Popup Container */
+.popup-container {
+    width: 300px;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #a3bfc2;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  */
+  
+  /* Body */
+  .popup-body {
+    margin-top: 10px;
+  }
+  .privacy-mode {
+    margin: 40px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .switch-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    gap: 10px; /* Adds spacing between the text and switch */
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+  }
+  /* 
+  .actions button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Detected Data Summary */
+  /* .summary {
+    font-size: 14px;
+    margin-bottom: 10px;
+  } */
+  
+  /* Footer */
+  /* .popup-footer {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .popup-footer a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .popup-footer a:hover {
+    text-decoration: underline;
+  }  */

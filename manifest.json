@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Cloak",
+  "version": "1.0.9",
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "Data/Popup/popup.html",
+    "default_icon": "Data/Icons/16.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "Data/Icons/128.png",
+    "48": "Data/Icons/48.png",
+    "16": "Data/Icons/16.png"
+  }
+}
