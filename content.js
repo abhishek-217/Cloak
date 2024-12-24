@@ -25,12 +25,12 @@ function clearBlur() {
 // Function to detect and blur sensitive data
 async function detectAndBlur() {
     // Regex patterns
-    const phoneRegex = /\b\d{10}\b|(\(\d{3}\)\s*\d{3}-\d{4})/g; // Phone numbers (e.g., 1234567890, (123) 456-7890)
-    const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g; // Emails (e.g., example@gmail.com)
-    const addressRegex = /\d{1,5}\s\w+(\s\w+)*,\s\w+,\s\w+\s\d{5}/g; // Addresses (e.g., 123 Main St, City, State 12345)
-    const visaRegex = /\b\d{4}(\s?\d{4}){3}\b/g; // Visa numbers (e.g., 4111 1111 1111 1111)
-    const ssnRegex = /\b\d{3}-\d{2}-\d{4}\b/g; // Social Security Numbers (e.g., 123-45-6789)
-    const postalRegex = /\b\d{5}(-\d{4})?\b/g; // Postal/Zip codes (e.g., 12345 or 12345-6789)
+    const phoneRegex = /\b\d{10}\b|(\(\d{3}\)\s*\d{3}-\d{4})/g; 
+    const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g; 
+    const addressRegex = /\d{1,5}\s\w+(\s\w+)*,\s\w+,\s\w+\s\d{5}/g; 
+    const visaRegex = /\b\d{4}(\s?\d{4}){3}\b/g; 
+    const ssnRegex = /\b\d{3}-\d{2}-\d{4}\b/g; 
+    const postalRegex = /\b\d{5}(-\d{4})?\b/g; 
 
     const regexPatterns = [phoneRegex, emailRegex, addressRegex, visaRegex, ssnRegex, postalRegex];
 
