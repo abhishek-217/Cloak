@@ -1,16 +1,15 @@
-// Helper function to blur detected elements
+
 function blurSensitiveData(elements) {
     elements.forEach((element) => {
         element.style.filter = "blur(5px)";
         element.style.backgroundColor = "#f0f0f0";
-        element.style.textDecoration = "underline"; // Add underline
-        element.style.textDecorationColor = "red";  // Red underline
-        element.style.textDecorationStyle = "solid"; // Solid line
-        element.style.textDecorationThickness = "2px"; // Thickness of underline
+        element.style.textDecoration = "underline"; 
+        element.style.textDecorationColor = "red";  
+        element.style.textDecorationStyle = "solid";
+        element.style.textDecorationThickness = "2px"; 
     });
 }
 
-// Helper function to clear blur
 function clearBlur() {
     document.body.querySelectorAll("*").forEach((node) => {
         node.style.filter = "";
@@ -22,7 +21,6 @@ function clearBlur() {
     });
 }
 
-// Function to detect and blur sensitive data
 async function detectAndBlur() {
     // Regex patterns
     const phoneRegex = /\b\d{10}\b|(\(\d{3}\)\s*\d{3}-\d{4})/g; 
@@ -34,7 +32,7 @@ async function detectAndBlur() {
 
     const regexPatterns = [phoneRegex, emailRegex, addressRegex, visaRegex, ssnRegex, postalRegex];
 
-    // Get all text nodes in the document
+   
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
     let node;
     const elementsToBlur = [];
@@ -45,43 +43,41 @@ async function detectAndBlur() {
         if (parentElement && parentElement.tagName !== "SCRIPT" && parentElement.tagName !== "STYLE") {
             const textContent = node.textContent;
 
-            // Check for all sensitive data patterns
+          
             if (regexPatterns.some((regex) => regex.test(textContent))) {
                 elementsToBlur.push(parentElement);
-                detectedCount++; // Increment for each match
+                detectedCount++;
             }
         }
     }
 
-    // Blur the detected elements
+   
     blurSensitiveData(elementsToBlur);
 
-    // Store the detected count in Chrome Storage
+
     await chrome.storage.sync.set({ detectedItems: detectedCount });
 
-    // Notify the popup about the update
+  
     chrome.runtime.sendMessage({
         action: "updateDetectedCount",
         count: detectedCount,
     });
 
-    // Send a notification message to the background script
     chrome.runtime.sendMessage({
         action: "detectedItemsUpdate",
         count: detectedCount,
     });
 }
 
-// Listen for messages from popup.js
 chrome.runtime.onMessage.addListener(async (request) => {
     if (request.action === "togglePrivacyMode") {
         if (request.enabled) {
             console.log("Privacy Mode Enabled: Detecting sensitive data...");
-            await detectAndBlur(); // Start detecting and blurring sensitive information
+            await detectAndBlur(); 
         } else {
             console.log("Privacy Mode Disabled: Clearing blurred elements...");
-            clearBlur(); // Remove all blurring
-            await chrome.storage.sync.set({ detectedItems: 0 }); // Reset the count
+            clearBlur(); 
+            await chrome.storage.sync.set({ detectedItems: 0 }); 
             chrome.runtime.sendMessage({
                 action: "updateDetectedCount",
                 count: 0,
@@ -90,10 +86,10 @@ chrome.runtime.onMessage.addListener(async (request) => {
     }
 });
 
-// Apply state on initial page load
+
 chrome.storage.sync.get("privacyMode", ({ privacyMode }) => {
     if (privacyMode) {
-        detectAndBlur(); // Apply blur if privacy mode is already on
+        detectAndBlur(); 
     }
 });
 
