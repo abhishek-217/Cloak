@@ -8,7 +8,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Header */
+ 
   .popup-header {
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
   
   */
   
-  /* Body */
+
   .popup-body {
     margin-top: 10px;
   }
@@ -40,7 +40,7 @@
     align-items: center;
     font-size: 16px;
     color: #333;
-    gap: 10px; /* Adds spacing between the text and switch */
+    gap: 10px;
   }
   
   .switch {
@@ -93,41 +93,7 @@
     color: #777;
     margin-top: 10px;
   }
-  /* 
-  .actions button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
   
-  .actions button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Detected Data Summary */
-  /* .summary {
-    font-size: 14px;
     margin-bottom: 10px;
   } */
   
-  /* Footer */
-  /* .popup-footer {
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .popup-footer a {
-    color: #007BFF;
-    text-decoration: none;
-    font-size: 12px;
-  }
-  
-  .popup-footer a:hover {
-    text-decoration: underline;
-  }  */
